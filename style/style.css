@@ -1,0 +1,32 @@
+body{
+    margin: 0px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    background-color: #078595;
+    padding: 12px;
+  }
+  li {
+    display: inline;
+    padding: 15px;
+  }
+  a{
+    color: black;
+    text-decoration: none;
+  }
+  nav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#078595;
+    color: white;
+    text-align: center;
+  }
