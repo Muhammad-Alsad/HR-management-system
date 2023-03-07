@@ -10,6 +10,7 @@ function newEmployee(EmpID,name,dep,level,image,Salary){
     this.ImageURL=image;
     this.Salary=Salary;
     allEmployee.push(this);
+    
 }
 
 let GhaziSamer = new newEmployee(1000,"Ghazi Samer","Administration","Senior");
@@ -40,7 +41,7 @@ newEmployee.prototype.netSalary =function () {
 
 newEmployee.prototype.render =function () {
     //debugger;
-    this.calculating();
+    this.netSalary();
     document.write(`<h4>the name is ${this.FullName} && my net salary is ${this.Salary }</h4>`);
 }
 
