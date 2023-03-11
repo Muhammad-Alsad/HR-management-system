@@ -12,14 +12,56 @@
 <body>
     <nav>
         <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./accounting.html">Accounting</a></li>
+            <li><a href="./index.html"><b>Home</b></a></li>
+            <li><a href="./accounting.html"><b>Accounting</b></a></li>
         </ul>
     </nav>
     <h3>HR-management-system</h3>
 
+    <div class="grid-container">
+
+        <div class="grid-child purple">
+            <form id="form">
+                <label for="fname">Full Name:</label><br>
+                <input type="text" id="fname" name="fname" ><br>
+
+                <label for="Img">Image url:</label><br>
+                <input type="text" id="Img"  ><br><br>
+                <div>
+               <label for="Department">Department :</label>
+               <select name="Department" id="Department">
+                <option value="">Select-From</option>
+                <option value="Administration">Administration</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Development">Development</option>
+                <option value="Finance">Finance</option>
+               </select><br/>
+               </div><br/>
+               <label for="Level">Level :</label>
+               <select name="Level " id="Level">
+                <option value="">Select-From</option>
+               <option value="Junior">Junior</option>
+               <option value="Mid-Senior">Mid-Senior</option>
+               <option value="Senior">Senior</option>
+               </select><br/><br/>
+                <input type="submit" value="Submit">
+              </form>
+        </div>
+    
+        <div id="contentDiv" class="grid-child green">
+           <h1>Employee Information</h1> 
+           <div id="divCards" >
+
+           </div>
+        </div>
+      
+    </div>
+
     <footer>
-        <p> &copy; Follow us in <b>facebook instgram</b><br>
+        <p> &copy; Follow US <b>
+            <a class="footerLink" href="https://www.facebook.com/">facebook</a>
+             <a class="footerLink" href="https://www.instagram.com/">instgram</a>
+            </b><br>
     </footer>
     <script src="./app.js"></script>
 </body>

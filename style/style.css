@@ -30,3 +30,45 @@ ul {
     color: white;
     text-align: center;
   }
+  .footerLink{
+    color:  white;
+  }
+  /* .form-Sec{
+    border: 1px solid black;
+    width: 42%;
+    height: 405px;
+    margin-left: 33px;
+  } */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.purple{
+  margin-left: 23px;
+  padding-top: 58px;
+  /* border: 1px solid seagreen; */
+}
+a{
+  color: white;
+}
+#divCards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+.card-style{
+    /* padding-left: 15px;  
+    background-color: rgb(15, 170, 194);
+    border-radius: 15px;
+    width: 39%;
+    float: right;
+    margin: 10px; 
+    display: grid; 
+    padding-bottom: 10px; */
+    background-color: #078595;
+    border-radius: 15px;
+    padding-left: 15px; 
+    
+  }
