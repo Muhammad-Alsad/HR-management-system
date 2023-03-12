@@ -47,7 +47,7 @@ newEmployee.prototype.netSalary =function () {
 }
 
 newEmployee.prototype.render =function () {
-
+   // debugger
     this.netSalary();
     this.genId();
     //document.write(`<h4>the name is ${this.FullName} && my net salary is ${this.Salary }</h4>`);
@@ -63,36 +63,30 @@ newEmployee.prototype.render =function () {
     mainDiv.appendChild(divCad);
 
     let h4El = document.createElement("h4");
-    h4El.textContent =`Full Name : ${this.FullName}`;
+    h4El.textContent =`Full Name : ${this.FullName} `;
     creDiv.appendChild(h4El)
     divCad.appendChild(creDiv);
     mainDiv.appendChild(divCad);
 
-    let h4Id =document.createElement("h4");
-    h4Id.textContent=`Id : ${this.EmployeeID}`;
-    creDiv.appendChild(h4Id);
-    divCad.appendChild(creDiv);
-    mainDiv.appendChild(divCad);
+     let h4Id =document.createElement("h4");
+     h4Id.textContent=`Id : ${this.EmployeeID}`;
+     creDiv.appendChild(h4Id);
 
-    let depEl =document.createElement("h4");
-    depEl.textContent=`Department : ${this.Department}`;
-    creDiv.appendChild(depEl)
-    divCad.appendChild(creDiv);
-    mainDiv.appendChild(divCad);
 
+     let depEl =document.createElement("h4");
+     depEl.textContent=`Department : ${this.Department}`;
+     creDiv.appendChild(depEl)
+  
     let levelEl = document.createElement("h4");
-    levelEl.textContent=`Level : ${this.level}`;
-    creDiv.appendChild(levelEl)
-    divCad.appendChild(creDiv);
-    mainDiv.appendChild(divCad);
+     levelEl.textContent=`Level : ${this.level}`;
+     creDiv.appendChild(levelEl)
 
-    let SalaryEl =document.createElement("h4");
-    SalaryEl.textContent=`Salary : ${this.Salary}`;
-    creDiv.appendChild(SalaryEl)
-    divCad.appendChild(creDiv);
-    mainDiv.appendChild(divCad);
 
-    this.genId();
+     let SalaryEl =document.createElement("h4");
+     SalaryEl.textContent=`Salary : ${this.Salary}`;
+     creDiv.appendChild(SalaryEl);
+  
+
 }
 
 form.addEventListener("submit",saveTheData);
@@ -107,8 +101,9 @@ function saveTheData(event){
     let level = event.target.Level.value;
 
 
-    let nEmployee=new newEmployee(fullName,ImgUrl,Department,level);
+    let nEmployee=new newEmployee(Idgen,fullName,Department,level,ImgUrl);
     nEmployee.render();
+    //console.log(event.target.Img.value);
 }
 
 function readEmp (){
