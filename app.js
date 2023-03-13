@@ -1,6 +1,6 @@
 'use strict';
 
-const allEmployee =[];
+let allEmployee =[];
 let newId=[]
 let Idgen = 1001;
 let mainDiv = document.getElementById("contentDiv");
@@ -16,18 +16,19 @@ function newEmployee(EmpID,name,dep,level,image,Salary){
     allEmployee.push(this);
     
 }
+
 newEmployee.prototype.genId =function(){
-    this.EmployeeID=(newId +Idgen );
+    this.EmployeeID=(newId +Idgen);
     Idgen ++;
 }
 
 let GhaziSamer = new newEmployee(1000,"Ghazi Samer","Administration","Senior","../assets/Ghazi.jpg");
 let LanaAli = new newEmployee(1001,"Lana Ali","Finance","Senior","../assets/Lana.jpg");
-//let TamaraAyoub = new newEmployee(1002,"Tamara Ayoub","Marketing","Senior","../assets/Tamara.jpg");
-//blet SafiWalid = new newEmployee(1003,"Safi Walid","Administration","Mid-Senior","../assets/Safi.jpg");
-// let OmarZaid = new newEmployee(1004,"Omar Zaid","Development","Senior");
-// let RanaSaleh = new newEmployee(1005,"Rana Saleh","Development","Junior");
-// let HadiAhmad = new newEmployee(1006,"Hadi Ahmad","Finance","Mid-Senior");
+let TamaraAyoub = new newEmployee(1002,"Tamara Ayoub","Marketing","Senior","../assets/Tamara.jpg");
+let SafiWalid = new newEmployee(1003,"Safi Walid","Administration","Mid-Senior","../assets/Safi.jpg");
+let OmarZaid = new newEmployee(1004,"Omar Zaid","Development","Senior","../assets/Omar.jpg");
+let RanaSaleh = new newEmployee(1005,"Rana Saleh","Development","Junior","../assets/Rana.jpg");
+let HadiAhmad = new newEmployee(1006,"Hadi Ahmad","Finance","Mid-Senior","../assets/Hadi.jpg");
 
 newEmployee.prototype.calculating =function () {
     //debugger
@@ -45,6 +46,8 @@ newEmployee.prototype.netSalary =function () {
     this.calculating();
     this.Salary = this.Salary - (this.Salary*0.075);
 }
+
+
 
 newEmployee.prototype.render =function () {
    // debugger
@@ -94,7 +97,7 @@ form.addEventListener("submit",saveTheData);
 function saveTheData(event){
     event.preventDefault();
     alert("form successfully submitted !");
-    debugger;
+    //debugger;
     let fullName = event.target.fname.value;
     let ImgUrl = event.target.Img.value;
     let Department = event.target.Department.value;
@@ -103,14 +106,42 @@ function saveTheData(event){
 
     let nEmployee=new newEmployee(Idgen,fullName,Department,level,ImgUrl);
     nEmployee.render();
-    //console.log(event.target.Img.value);
+    saveData(allEmployee);
+    //console.log(fullName,ImgUrl,Department,level);
+
 }
+
+function saveData(data){
+    let strArr = JSON.stringify(data);
+    localStorage.setItem("aEmployee",strArr);
+    //let strArrB = JSON.parse(strArr);
+    //console.log(strArrB);
+}
+
+function getData(){
+    let retriveArr =localStorage.getItem("aEmployee");
+    let ObjArr = JSON.parse(retriveArr);
+   // console.log(ObjArr);
+    if(ObjArr != null){
+        allEmployee =[];
+        
+
+        for(let i =0; i<ObjArr.length;i++){
+            new newEmployee(Idgen, ObjArr[i].FullName,ObjArr[i].Department,ObjArr[i].level,ObjArr[i].ImageURL,ObjArr[i].Salary);
+        }
+        console.log(allEmployee);
+    }
+
+}
+
 
 function readEmp (){
     //debugger;
     for(let i=0;i<allEmployee.length;i++){
-        
+       
         allEmployee[i].render();
     }
 }
+getData();
 readEmp();
+
