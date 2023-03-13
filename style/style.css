@@ -77,3 +77,12 @@ a{
     padding-bottom: 150px;
     padding-right: 20px;
   }
+
+  #table{
+    /* border: 1px solid black; */
+    margin-left: 30%;
+    margin-top: 10%;
+    font-size: 21px;
+    background-color: #88c3ca;
+   
+  }
