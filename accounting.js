@@ -81,9 +81,12 @@ function renderTable() {
     let tdMarkitingSalary = document.createElement('td');
     tdMarkitingSalary.textContent = markSum;
 
-    trMarketing.appendChild(tdMarkitingSalary);
-    trMarketing.appendChild(tdMarkitingAvg);
     trMarketing.appendChild(tdMarkiting);
+    trMarketing.appendChild(tdMarkitingAvg);
+    trMarketing.appendChild(tdMarkitingSalary);
+
+    
+    
 
     let tdDevelopment =document.createElement('td');
     tdDevelopment.textContent=devCount;
@@ -94,8 +97,9 @@ function renderTable() {
     let tdDevelopmentSalary = document.createElement('td');
     tdDevelopmentSalary.textContent=devSum;
 
-    trDevelopment.appendChild(tdDevelopmentAvg);
+ 
     trDevelopment.appendChild(tdDevelopment);
+    trDevelopment.appendChild(tdDevelopmentAvg);
     trDevelopment.appendChild(tdDevelopmentSalary);
 
     let tdFinance =document.createElement('td');
@@ -121,8 +125,9 @@ function renderTable() {
     tdAllEmployeeSalary.textContent=allDepartmentsSalariesSum;
 
 
-    trFooter.appendChild(tdAllEmployeeAvg)
+
     trFooter.appendChild(tdAllEmployee);
+    trFooter.appendChild(tdAllEmployeeAvg)
     trFooter.appendChild(tdAllEmployeeSalary);
 
 
